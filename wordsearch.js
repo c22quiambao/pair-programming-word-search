@@ -1,22 +1,14 @@
 const wordSearch = (letters, word) => {
 // Check horizontally
-  //console.log ("Word to search:", word);
-  //console.log ("-- Checking Horizontally --");
   const horizontalJoin = letters.map(ls => ls.join(''));
-  //console.log ("horizontalJoin : ", horizontalJoin);
   for (const element of horizontalJoin) {
-    //console.log("current array element being checked : ", element);
     //check for word
     if (element.includes(word)) {
-      //console.log (`Word ${word} found horizontally, returning value true.`);
       return true;
     }
   }
 
   // Check vertically
-  //console.log (`Word ${word} not found horizontally.`);
-  //console.log ("-- Checking Vertically --");
-
   // Get the number of rows and columns
   const rows = letters.length;
   const cols = letters[0].length;
@@ -33,16 +25,12 @@ const wordSearch = (letters, word) => {
 
   //create new vertical join
   const verticalJoin = result.map(ls => ls.join(''));
-  //console.log ("verticalJoin : ", verticalJoin);
   for (const element of verticalJoin) {
-    //console.log("current array element being checked : ", element);
     // check for word
     if (element.includes(word)) {
-      //console.log (`Word ${word} found vertically, returning value true.`);
       return true;
     }
   }
-  //console.log (`Word ${word} not found vertically returning value false.`);
   return false;
 
 // Stretch check backwards
